@@ -36,11 +36,15 @@ if __name__ == '__main__':
     count = 0
     print('Starting')
 
-    # This is dumb but lets see
-    for a in range(146,147):
-        for b in range(75,76):
-            for c in range(72,255):
-                for d in range(1, 255):
+    # This is dumb but let's see
+
+    '''
+    This code checks all IP addresses in the range 104.82.112.0 to 104.82.187.255
+    '''
+    for a in range(104, 105):
+        for b in range(82, 83):
+            for c in range(112, 188):
+                for d in range(0, 256):
                     ip = str(a) + '.' + str(b) + '.' + str(c) + '.' + str(d)
                     cert = get_server_cert(ip, 443)
                     if cert != None:
