@@ -1,6 +1,12 @@
 '''
 
+REM
+
+// Get a cert from a server and write it to a pem file
 openssl s_client -showcerts -connect www.example.com:443 < /dev/null | openssl x509 -outform PEM > certfile.pem
+
+// View the contents of the pem file
+openssl x509 -in XXXXXXXX.pem -text
 
 '''
 

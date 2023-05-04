@@ -12,8 +12,12 @@ def get_modulus_from_pem_file(certfile):
 def get_modulus_from_pem(cert_pem):
     # takes a cert file in a buffer (contents of xxx.pem) and returns a modulus
     cert = load_certificate(FILETYPE_PEM, cert_pem)
-    modn = cert.get_pubkey().to_cryptography_key().public_numbers().n
-    return modn
+    try:
+        modn = cert.get_pubkey().to_cryptography_key().public_numbers().n
+        return modn
+    except:
+        pass
+
 
 def get_modulus_from_cert(cert):
     # Returns a modulus from a OpenSSL.crypto.X509 object
